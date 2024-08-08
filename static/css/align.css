@@ -1,0 +1,45 @@
+/* Content Alignment Styles
+-------------------------------------------------------------- */
+.aligncenter, .alignnone, .alignright, .alignleft {
+    display: block; margin: 1.6em auto; clear: both;
+	}
+.wp-caption {
+	color:#555; max-width: 100%;
+	}
+.wp-caption img {
+	border: 0 none; height: auto; margin: 0; padding: 0;
+	}
+.wp-caption-text {
+    font-size: 14px; margin: 0; padding: .6em .1em 0; color: #C5C2B6;
+	}
+.wp-caption.aligncenter { 
+	text-align: center; 
+	}
+/* TABLETS */
+@media screen and (min-width: 768px) {
+	.alignnone {
+		margin: 3em 0; 
+		}
+	.aligncenter {
+		margin: 3em auto; 
+		}
+	.alignleft,
+	.alignright {
+		max-width: 50%; 
+		}
+	.alignright {
+		float:right; margin: .4em 0 1em 2em;
+		}
+	.alignleft {
+		float: left; margin: .4em 2em 1em 0;
+		}
+}
+/* DESKTOPS MEDIUM */
+@media screen and (min-width: 1200px) { 
+	.content-area:not(.with-sidebar) .alignright, .content-area:not(.with-sidebar) .wp-caption.alignright {
+		margin-right: -140px; margin-left: 2em;
+		}
+	.content-area:not(.with-sidebar) .alignleft, .content-area:not(.with-sidebar) .wp-caption.alignleft {
+		margin-left: -140px; margin-right: 2em;
+		}	
+}

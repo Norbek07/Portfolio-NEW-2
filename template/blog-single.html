@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} About Me {% endblock title %}
+{% block content %}
+
+
+     
+<!-- page -->
+<div id="page" class="hfeed site">
+        
+  <!-- header -->
+  <header id="masthead" class="site-header" role="banner">
+   
+          <!-- site-navigation -->
+          <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+              
+              <a class="menu-toggle"><span class="lines"></span></a>
+              
+              <!-- nav-menu -->
+              <div class="nav-menu">
+                   <!-- level 2 -->
+                          <ul>
+                              <li><a href="{% url 'home-page'%}">Home</a>
+                                  <!-- level 2 -->
+                              </li>
+                              <li><a href="{% url 'blog-page'%}">Blogs</a>
+                              <li><a href="{% url 'portfolio-page' %}">Portfolio</a></li>
+                              <li><a href="{% url 'books-page'%}">Books</a></li>
+                              <li><a href="{% url 'gallery-page'%}">Gallery</a></li>
+                              <li><a href="{% url 'about-page'%}">About Me</a>
+                                  <!-- level 2 -->
+                                          
+                              <li><a href="{% url 'contact-page'%}">Contact</a></li>
+                          </ul>
+              </div>
+              <!-- nav-menu -->
+              
+              <a class="search-toggle toggle-link"></a>
+                                  
+              <!-- search-container -->
+              <div class="search-container">
+                  
+                  <div class="search-box">
+                      <form role="search" method="get" class="search-form" action="#">
+                          <label>Search for
+                              <input type="search" id="search-field" placeholder="type and hit enter" name="s">
+                          </label>
+                          <input type="submit" class="search-submit" value="Search">
+                      </form>
+                  </div>
+              
+              </div>
+              <!-- search-container -->
+              
+              <!-- social-container -->
+              <div class="social-container">
+                  
+                  <ul class="social">
+                      <li><a class="facebook" href="#"></a></li>
+                      <li><a class="twitter" href="#"></a></li>
+                      <li><a class="vine" href="#"></a></li>
+                      <li><a class="dribbble" href="#"></a></li>
+                      <li><a class="instagram" href="#"></a></li>
+                  </ul>
+                
+                  
+              </div>
+              <!-- social-container -->
+              
+          </nav>
+          <!-- site-navigation -->
+                     
+          <!-- site-title -->
+          <h1 class="site-title">
+            <a href="{% url 'home-page' %}" rel="home">
+                <img src="{% static 'images/site/logo.png' %}" alt="logo">
+                  <!--EDITOR-->
+              </a>
+          </h1>   
+        
+        
+        
+        <!-- site-main -->
+        <div id="main" class="site-main">
+        
+        
+        
+                      
+            <!-- primary -->
+          <div id="primary" class="content-area">
+              
+                <!-- site-content -->
+                <div id="content" class="site-content" role="main">
+                
+                
+                
+        
+        
+          <!-- InstanceBeginEditable name="FeaturedContent" -->
+          
+          
+          <!-- InstanceEndEditable -->
+                  
+                    
+                    
+                    <!-- layout-fixed -->
+                  <div class="layout-fixed">
+                    
+                    
+                    
+            <!-- InstanceBeginEditable name="LayoutFixedContent" -->
+                  
+                    
+                            <!-- .hentry -->
+                            <article class="hentry post">
+                            
+                              
+                                <!-- .entry-header -->
+                                <header class="entry-header">
+                                    
+                                    
+                                    <!-- .entry-title -->
+                                    <h1 class="entry-title">{{blog.title}}</h1>
+                                    
+                                    
+                                    <!-- .entry-meta -->
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                          <time class="entry-date" >{{blog.created_date}}</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="#comments">7 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta"></span> read</span>
+                                        <span class="cat-links">
+                                            <a href="#" title="View all posts in Travel" rel="category tag">{{blog.category}}</a>
+                                        </span>  
+                                        <!--<span class="edit-link">
+                                          <a class="post-edit-link" href="#">Edit</a>
+                                        </span>-->
+                                    </div>
+                                    <!-- .entry-meta -->
+                                    
+                                </header>
+                                <!-- .entry-header -->
+                                
+                                <!-- .featured-image -->
+                                <div class="featured-image">
+                                    <img src="{{blog.image.url}}" alt="blog-image">
+                                </div>
+                                <!-- .featured-image -->
+                                                                
+                                
+                                
+                                <!-- .entry-content -->
+                                <div class="entry-content">
+                                    {{blog.description|safe}}
+                                </div>
+                                <!-- .entry-content -->
+                                  
+                            
+                                
+                            </article>
+                            <!-- .hentry -->
+                        
+                        
+                                                            
+                            
+                             
+                            
+                            
+                            <!-- #comments -->
+
+                            <div id="comments" class="comments-area">
+                              
+                                <h3 class="section-title">{{comments_count}} Comments</h3>
+                                
+                                <!-- .commentlist -->
+                                <ol class="commentlist">
+                                  <li class="comment even thread-even depth-1">
+                                    
+                                    <!-- #comment-## -->
+                                     {% for comment in comments %}
+                                    <article class="comment">
+                                      
+                                      <!-- .comment-meta -->
+                                      <header class="comment-meta comment-author vcard">
+                                          <img alt="" src="https://thumbs.dreamstime.com/b/hacker-looking-camera-face-mask-dark-theme-wallpaper-hacker-looking-camera-face-mask-dark-theme-wallpaper-291465611.jpg" class="avatar" height="75" width="75">
+                                          <cite class="fn"><a href="#" rel="external nofollow" class="url">{{comment.full_name}}</a></cite>
+                                          <span class="comment-date">{{comment.created_date}}</span>
+                                      </header>
+                                      <!-- .comment-meta -->
+                                      
+                                      <!-- .comment-content -->
+                                      <section class="comment-content comment">
+                                        <p>{{comment.message}}</p>
+                                      </section>
+                                      <!-- .comment-content -->
+                                      
+      
+                                      
+                                    </article>
+                                    {% endfor %}
+                                    
+                                    <!-- #comment-## --> 
+                                  </li>
+                                  <!-- .comment depth-1 -->
+                                  
+                                </ol>
+                                <!-- .commentlist -->
+                                
+                                
+                                <!-- #respond --> 
+                                <div id="respond">
+                                
+                                  <h3 id="reply-title">LEAVE A COMMENT <small><a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;">Cancel reply</a></small></h3>
+                                
+                                  <!-- .commentform -->
+                                  <form action="#" method="post" id="commentform">
+                                    {% csrf_token %}
+                                    <p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
+                                    
+                                    <p class="comment-form-comment">
+                                      <label for="comment">Comment</label>
+                                      <textarea id="comment" name="message" rows="8" aria-required="true"></textarea>
+                                    </p>
+                                    
+                                    <p class="comment-form-author">
+                                      <label for="author">Name <span class="required">*</span></label>
+                                      <input id="author" name="full_name" type="text" size="30" aria-required="true">
+                                    </p>
+                                    
+                                    <p class="comment-form-email">
+                                      <label for="email">Email <span class="required">*</span></label>
+                                      <input id="email" name="email" type="text" size="30" aria-required="true">
+                                    </p>
+                                    
+                                    
+                                    <p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>
+                                    
+                                    <p class="form-submit">
+                                      <input type="submit" name="submit" id="submit" class="button primary" value="Post Comment">
+                          
+                                    </p>
+                                    
+                                  </form>
+                                  <!-- .commentform -->
+                                  
+                                </div>
+                                <!-- #respond --> 
+                                
+                              </div>
+                              <!-- #comments -->
+                              
+                              
+                              
+                              
+                          
+                          
+                      
+                      <!-- InstanceEndEditable -->
+                        
+                          
+                        
+                      </div>
+                      <!-- layout-fixed -->
+                  
+                  
+                    
+                  
+                  </div>
+                  <!-- site-content -->
+                  
+              </div>
+              <!-- primary -->    
+          
+          
+          
+          
+          </div>
+          <!-- site-main -->
+       {% endblock content %}
+  

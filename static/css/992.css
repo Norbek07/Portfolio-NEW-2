@@ -1,0 +1,208 @@
+/* DESKTOPS */
+@media screen and (min-width: 992px) {
+	
+	/* SIDEBAR */
+    .with-sidebar { 
+        float: left; width: 70%;
+        }
+    .sidebar { 
+        float: left; width: 25%; margin-left: 5%;
+        }
+	
+	/* HEADER */
+	.site-header {
+ 	 	padding: 0 0 3em; width: 100%;
+		}
+	.site-header .site-title {
+ 	 	font-size: 2em; padding-top: 2.6em; margin-bottom: .2em;
+		}
+	.site-title img {
+		margin: 10px 0 -10px 0; max-height: 144px;
+		}
+	
+	/* Header Social Icons */
+	.social-container { 
+		display: block; position: absolute; top: 12px; left: 12px;
+		}
+	.site-header .social { 
+		margin: 0;
+		}
+	   
+	/* DESKTOP MENU */
+	.menu-toggle {
+		display: none; padding: 0;
+		}
+	.site-navigation { 
+        text-align: center; border-bottom: 1px solid #E9E6DF;
+        }
+    .nav-menu ul {
+        display: inline-block; list-style: none; margin: 0; padding: 0; 
+        }
+    .nav-menu ul li {
+        display: inline-block; letter-spacing: 2px; line-height: 53px; margin: 0 0.8em; padding: 0; position: relative; 
+        }
+    .nav-menu ul li a {
+        border: 0; display: inline-block; padding: 0; 
+        }
+	/* navigation level 2 */
+    .nav-menu ul ul {
+        border: 1px solid #E9E6DF; box-shadow: 0px 4px 10px 1px rgba(176, 173, 150, 0.1); display: none; left: -1.8em; margin: -1px 0 0 0; padding: 0; position: absolute; top: 54px; width: 160px; z-index: 10310;
+        }
+    .nav-menu ul > li:hover > ul {
+        display: block; 
+        }
+    .nav-menu ul ul li {
+        background-color: #fff; display: block; font-size: 11px; letter-spacing: 1px; padding: 0; line-height: 1.5; margin: 0; max-height: none; text-align: left; border-bottom: 1px solid #eee; 
+        }
+    .nav-menu ul ul li:first-child {
+        border-top: 0; 
+        }
+    .nav-menu ul ul li a {
+        display: block; font-weight: normal; padding: 1.3em 1.8em; 
+        }
+    .nav-menu ul ul li:last-child {
+        border-bottom: none; 
+        }
+	/* navigation level 3 */
+	.nav-menu ul ul ul { 
+        top: 0; left: 158px; right: auto; 
+        }
+	
+    /* HEADER SEARCH */
+	.search-container {
+		padding: 17% 5% 2% 5%;
+		}
+	.search-toggle {
+		display: block;
+		}
+	.menu-expanded .search-toggle:before {
+		content: '\e898';
+		}
+    .search-box #search-field {
+        padding: .4em 1.0em; font-size: 52px !important;
+        }
+	.search-box #search-field::-webkit-input-placeholder { color:#585858; }
+	.search-box #search-field::-moz-placeholder { color:#585858; }
+	.search-box #search-field:-ms-input-placeholder { color:#585858; }
+	
+	/* === TOP MENU LAYOUT === */
+	/* ======================= */
+	
+	.site-navigation {
+		position: absolute; top: 0; width: 100%; height: 54px; right: 0; z-index: 10000; background: #fff; background: rgba(255,255,255,.96); -webkit-backface-visibility: hidden;
+		-webkit-transition: -webkit-transform .4s, height .3s, background .4s;
+		transition: transform .4s, height .3s, background .4s;	
+		}
+	/* when hidden it goes up */
+	.is-menu-fixed.menu-invisible .site-navigation {
+		-webkit-transform: translate(0,-64px);
+		transform: translate(0,-64px);
+		-webkit-transition: -webkit-transform .2s;
+		transition: transform .2s;
+		opacity: 0;
+		}
+	/* when shown & detached position is fixed */
+	.is-menu-fixed.menu-detached .site-navigation {
+		position: fixed;
+		-webkit-transition: -webkit-transform .3s, height .3s, background .4s, opacity .3s;
+		transition: transform .3s, height .3s, background .4s, opacity .3s;
+		}
+	
+	/* when expanded : increases menu width & height */
+	.menu-expanded .site-navigation {
+		width: 100%; height: 100%; position: fixed;
+		}
+	.search-container {
+		opacity: 0; display: block; visibility: hidden;
+		}
+	
+	/* shows navigation */
+	.menu-expanded .search-container {
+		display: block; opacity: 1;  visibility: visible;
+		-webkit-transition: opacity .5s;
+		transition: opacity .5s;
+		-webkit-transition-delay: .2s;
+		transition-delay: .2s;
+		}	
+	
+    /* MASONRY */
+    .masonry .hentry { 
+        width: 33%; 
+        }
+    .masonry .hentry.x2 { 
+        width: 66%; 
+        }
+    .with-sidebar .masonry .hentry { 
+        width: 50%; 
+        }
+    .with-sidebar .masonry .hentry.x2 { 
+        width: 100%; 
+        }
+	
+	/* BOOKSHELF */
+	.bookshelf figure { 
+        padding: 3em 0; width: 340px; 
+        }
+	.details ul { 
+        padding: 4em 3em 0 2em; font-size: .925em; 
+        }
+	.csstransformspreserve3d .details ul { 
+        padding: 4em 3em 0 5.2em; font-size: .925em; 
+        }
+	
+	/* FOOTER WIDGETS */
+    .site-footer  .widget-area .widget,
+    .site-footer  .widget-area .widget:nth-child(odd),
+	.site-footer  .widget-area .widget:nth-child(even) { 
+        width: 25%; float: left; padding: 0 1em 1em 1em;
+        }
+    .site-footer .widget-area .widget:nth-child(2n+1) { 
+        clear: none;
+        }
+	
+    .site-footer .widget-area .widget:first-child { 
+        padding-left: 0;
+        }
+    .site-footer .widget-area .widget:nth-child(4n) { 
+        padding-right: 0;
+        }
+}
+
+
+/* DESKTOPS MEDIUM */
+@media screen and (min-width: 1200px) { 
+	
+	 /* increase column gutter on large screens */
+	 .row {
+		margin-left: -20px;
+		margin-right: -20px;
+		}
+	.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+		padding-left: 20px; padding-right: 20px;
+		}
+	 
+	/* FOOTER WIDGETS */
+    .site-footer .widget-area .widget,
+    .site-footer .widget-area .widget:nth-child(odd),
+	.site-footer .widget-area .widget:nth-child(even) { 
+        padding: 0 1.5em 1em 1.5em;
+        }	
+    .site-footer .widget-area .widget:first-child { 
+        padding-left: 0;
+        }
+    .site-footer .widget-area .widget:nth-child(4n) { 
+        padding-right: 0;
+        }
+     
+}
+
+
+/* DESKTOPS LARGE */
+@media screen and (min-width: 1600px) { 
+	
+	/* POST SLIDER */
+	.post-thumbnail .entry-title { 
+		font-size: 22px;
+		}
+   
+}

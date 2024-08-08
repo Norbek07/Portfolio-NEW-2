@@ -1,0 +1,348 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Blog {% endblock title %}
+{% block content %}
+        
+         <!-- page -->
+    <div id="page" class="hfeed site">
+        
+        <!-- header -->
+        <header id="masthead" class="site-header" role="banner">
+ 				
+                <!-- site-navigation -->
+                <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+                    
+                    <a class="menu-toggle"><span class="lines"></span></a>
+                    
+                    <!-- nav-menu -->
+                    <div class="nav-menu">
+                        <ul>
+                            <li><a href="{% url 'home-page'%}">Home</a>
+                                <!-- level 2 -->
+                            </li>
+                            <li><a href="{% url 'blog-page'%}">Blogs</a>
+                            <li><a href="{% url 'portfolio-page' %}">Portfolio</a></li>
+                            <li><a href="{% url 'books-page'%}">Books</a></li>
+                            <li><a href="{% url 'gallery-page'%}">Gallery</a></li>
+                            <li><a href="{% url 'about-page'%}">About Me</a>
+                                <!-- level 2 -->
+                                        
+                            <li><a href="{% url 'contact-page'%}">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- nav-menu -->
+                    
+                    <a class="search-toggle toggle-link"></a>
+                                        
+                    <!-- search-container -->
+                    <div class="search-container">
+                        
+                        <div class="search-box">
+                            <form role="search" method="get" class="search-form" action="#">
+                                <label>Search for
+                                    <input type="search" id="search-field" placeholder="type and hit enter" name="s">
+                                </label>
+                                <input type="submit" class="search-submit" value="Search">
+                            </form>
+                        </div>
+                    
+                    </div>
+                    <!-- search-container -->
+                    
+                    <!-- social-container -->
+                    <div class="social-container">
+                        
+                        <ul class="social">
+                            <li><a class="facebook" href="#"></a></li>
+                            <li><a class="twitter" href="#"></a></li>
+                            <li><a class="vine" href="#"></a></li>
+                            <li><a class="dribbble" href="#"></a></li>
+                            <li><a class="instagram" href="https://www.instagram.com/norbek._off/"></a></li>
+                            <li><a href="https://github.com/Norbek07"><ion-icon name="logo-github"></ion-icon></a></li>
+                        </ul>
+                      
+                        
+                    </div>
+                    <!-- social-container -->
+                    
+                </nav>
+                <!-- site-navigation -->
+                           
+                <!-- site-title -->
+                <h1 class="site-title">
+                	<a href="index.html" rel="home">
+                    	<img src="{% static 'images/site/logo.png'%}" alt="logo">
+                        <!--EDITOR-->
+                    </a>
+                </h1>
+                <!-- site-title -->
+                
+                
+                <!--<h1 class="site-title">
+                	<a href="../index.html" rel="home">
+                        EDITOR
+                    </a>
+                </h1>
+                <p class="site-description">just another minimalist theme.</p>-->
+
+                
+        </header>
+        
+        
+        <!-- site-main -->
+        <div id="main" class="site-main">
+        
+        
+        
+        	            
+            <!-- primary -->
+        	<div id="primary" class="content-area">
+            	
+                <!-- site-content -->
+                <div id="content" class="site-content" role="main">
+                
+                
+                
+                
+                	
+                    
+                    <!-- InstanceBeginEditable name="FeaturedContent" -->
+					
+                    
+					
+					<!-- InstanceEndEditable -->
+                	
+                    
+                    
+                    <!-- layout-medium -->
+                	<div class="layout-medium">
+                    
+                    
+                    
+						<!-- InstanceBeginEditable name="LayoutMediumContent" -->
+                	
+                    
+                        <!-- .hentry -->
+                        <article class="hentry page">
+                        
+                        	
+                            <!-- .entry-header -->   
+                            <header class="entry-header">
+                                <h1 class="entry-title">About Me</h1>
+                            </header>
+                            <!-- .entry-header -->   
+                            
+                            {% for  about in about%}
+                            <!-- .entry-content -->
+                            <div class="entry-content">
+                            	
+                                <p>
+                                	<img src="{{about.image.url}}" alt="profile photo" style="width: 100%; height: 750px;">
+                                </p>
+                                
+                                <h2 class="section-title center">{{about.title}}</h2>
+                                
+                                <p>{{about.description}}</p>
+                                {% endfor %}
+                                
+                                <h2 class="section-title center">WHAT HE DOES FOR A LIVING</h2>
+                                
+                                <!-- row -->
+                                <div class="row">
+                                    
+                                    <!-- column 6/12 -->
+                                    <div class="col-sm-6 col-lg-3">
+                                        
+                                        <!-- service -->
+                                        <div class="service">
+                                            <i class="pw-icon-brush"></i>
+                                            <h4>Graphic Design</h4>
+                                            <p>I design super cool websites. It is a long established fact that a reader will be distracted by the readable content.</p>
+                                        </div>
+                                        <!-- service -->
+
+                                    </div>
+                                    <!-- column 6/12 -->
+                                    
+                                    <!-- column 6/12 -->
+                                    <div class="col-sm-6 col-lg-3">
+
+                                        <!-- service -->
+                                        <div class="service">
+                                            <i class="pw-icon-camera"></i>
+                                            <h4>Photography</h4>
+                                            <p>I can design beautiful type faces for both digital and print media. It is a long established fact that a reader will be distracted.</p>
+                                        </div>
+                                        <!-- service -->
+
+                                    </div>
+                                    <!-- column 6/12 -->
+
+                                    <!-- column 6/12 -->
+                                    <div class="col-sm-6 col-lg-3">
+
+                                        <!-- service -->
+                                        <div class="service">
+                                            <i class="pw-icon-beaker"></i>
+                                            <h4>Web Development</h4>
+                                            <p>I write about web design. It is a long established fact that a reader will be distracted by the readable content.</p>
+                                        </div>
+                                        <!-- service -->
+
+                                    </div>
+                                    <!-- column 6/12 -->
+                                    
+                                    <!-- column 6/12 -->
+                                    <div class="col-sm-6 col-lg-3">
+
+                                        <!-- service -->
+                                        <div class="service">
+                                            <i class="pw-icon-music"></i>
+                                            <h4>Music Composer</h4>
+                                            <p>I have strong project management skills. It is a long established fact that a reader will be distracted.</p>
+                                        </div>
+                                        <!-- service -->
+
+                                    </div>
+                                    <!-- column 6/12 -->
+                                    
+                                </div>
+                                <!-- row -->
+                                
+                                
+                                
+                                
+                                <h2 class="section-title center">FUN FACT</h2>
+                                
+                                <!-- row -->
+                                <div class="row">
+                                    
+                                    <!-- column 3/12 -->
+                                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                                        <!-- fun-fact -->
+                                        <div class="fun-fact">
+                                            <i class="pw-icon-thumbs-up"></i>
+                                            <h4>10 PROJECTS COMPLETED</h4>
+                                        </div>
+                                        <!-- fun-fact -->
+
+                                    </div>
+                                    <!-- column 3/12 -->
+                                    
+                                    <!-- column 3/12 -->
+                                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                                        <!-- fun-fact -->
+                                        <div class="fun-fact">
+                                            <i class="pw-icon-github-circled"></i>
+                                            <h4>27 MILIONS LINES OF CODE</h4>
+                                        </div>
+                                        <!-- fun-fact -->
+
+                                    </div>
+                                    <!-- column 3/12 -->
+                                    
+                                    <!-- column 3/12 -->
+                                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                                        <!-- fun-fact -->
+                                        <div class="fun-fact">
+                                            <i class="pw-icon-mic-outline"></i>
+                                            <h4>25 PODCASTS RELEASED</h4>
+                                        </div>
+                                        <!-- fun-fact -->
+
+                                    </div>
+                                    <!-- column 3/12 -->
+                                    
+                                    <!-- column 3/12 -->
+                                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                                        <!-- fun-fact -->
+                                        <div class="fun-fact">
+                                            <i class="pw-icon-pin-outline"></i>
+                                            <h4>300 ARTICLES WROTE</h4>
+                                        </div>
+                                        <!-- fun-fact -->
+
+                                    </div>
+                                    <!-- column 3/12 -->
+                                    
+                                    <!-- column 3/12 -->
+                                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                                        <!-- fun-fact -->
+                                        <div class="fun-fact">
+                                            <i class="pw-icon-location"></i>
+                                            <h4>2 COUNTRIES VISITED</h4>
+                                        </div>
+                                        <!-- fun-fact -->
+
+                                    </div>
+                                    <!-- column 3/12 -->
+
+                                    <!-- column 3/12 -->
+                                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                                        <!-- fun-fact -->
+                                        <div class="fun-fact">
+                                            <i class="pw-icon-instagram"></i>
+                                            <h4>2500 SHOTS CAPTURED</h4>
+                                        </div>
+                                        <!-- fun-fact -->
+
+                                    </div>
+                                    <!-- column 3/12 -->
+
+                                </div>
+                                <!-- row -->
+                                
+                                
+                                
+                                
+                                <h2 class="section-title center">I am a social guy</h2>
+                                <!-- SOCIAL -->
+                                <ul class="social">
+                                    <li><a class="github" href="https://github.com/Norbek07"></a></li>
+                                    <li><a class="instagram" href="https://www.instagram.com/norbek._off/"></a></li>
+                                    <li><a class="youtube" href="https://www.youtube.com/@Norbek007"></a></li>
+                                </ul>
+                                <!-- SOCIAL -->
+                                
+                                
+                            </div>
+                            <!-- .entry-content -->
+                            
+                            
+                        </article>
+                        <!-- .hentry -->
+                
+                    
+                
+                		<!-- InstanceEndEditable -->
+                    	
+                        
+                    	
+                    </div>
+                    <!-- layout-medium -->
+                    
+                    
+                
+                
+                	
+                
+                </div>
+                <!-- site-content -->
+                
+            </div>
+            <!-- primary -->    
+        
+        
+        
+        
+        </div>
+        <!-- site-main -->
+        
+{% endblock content %}
+       

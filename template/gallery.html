@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Blog {% endblock title %}
+{% block content %}
+
+<!-- page -->
+<div id="page" class="hfeed site">
+
+    <!-- header -->
+    <header id="masthead" class="site-header" role="banner">
+
+        <!-- site-navigation -->
+        <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+
+            <a class="menu-toggle"><span class="lines"></span></a>
+
+            <!-- nav-menu -->
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="{% url 'home-page'%}">Home</a>
+                        <!-- level 2 -->
+                    </li>
+                    <li><a href="{% url 'blog-page'%}">Blogs</a>
+                    <li><a href="{% url 'portfolio-page' %}">Portfolio</a></li>
+                    <li><a href="{% url 'books-page'%}">Books</a></li>
+                    <li><a href="{% url 'gallery-page'%}">Gallery</a></li>
+                    <li><a href="{% url 'about-page'%}">About Me</a>
+                        <!-- level 2 -->
+
+                    <li><a href="{% url 'contact-page'%}">Contact</a></li>
+                </ul>
+            </div>
+            <!-- nav-menu -->
+
+            <a class="search-toggle toggle-link"></a>
+
+            <!-- search-container -->
+            <div class="search-container">
+
+                <div class="search-box">
+                    <form role="search" method="get" class="search-form" action="#">
+                        <label>Search for
+                            <input type="search" id="search-field" placeholder="type and hit enter" name="s">
+                        </label>
+                        <input type="submit" class="search-submit" value="Search">
+                    </form>
+                </div>
+
+            </div>
+            <!-- search-container -->
+
+            <!-- social-container -->
+            <div class="social-container">
+
+                <ul class="social">
+                    <li><a class="facebook" href="#"></a></li>
+                    <li><a class="twitter" href="#"></a></li>
+                    <li><a class="vine" href="#"></a></li>
+                    <li><a class="dribbble" href="#"></a></li>
+                    <li><a class="instagram" href="https://www.instagram.com/norbek._off/"></a></li>
+                    <li><a href="https://github.com/Norbek07"><ion-icon name="logo-github"></ion-icon></a></li>
+                </ul>
+
+
+            </div>
+            <!-- social-container -->
+
+        </nav>
+        <!-- site-navigation -->
+
+        <!-- site-title -->
+        <h1 class="site-title">
+            <a href="{% url 'home-page'%}" rel="home">
+                <img src="{% static 'images/site/logo.png'%}" alt="logo">
+                <!--EDITOR-->
+            </a>
+        </h1>
+        <!-- site-title -->
+
+
+        <!--<h1 class="site-title">
+                	<a href="../index.html" rel="home">
+                        EDITOR
+                    </a>
+                </h1>
+                <p class="site-description">just another minimalist theme.</p>-->
+
+
+    </header>
+
+
+    <!-- site-main -->
+    <div id="main" class="site-main">
+
+
+
+
+        <!-- primary -->
+        <div id="primary" class="content-area">
+
+            <!-- site-content -->
+            <div id="content" class="site-content" role="main">
+
+
+
+
+
+
+                <!-- InstanceBeginEditable name="FeaturedContent" -->
+
+
+                <!-- InstanceEndEditable -->
+
+
+
+                <!-- layout-medium -->
+                <div class="layout-medium">
+
+
+
+                    <!-- InstanceBeginEditable name="LayoutMediumContent" -->
+
+
+                    <!-- entry-header -->
+                    <header class="entry-header">
+
+                        <h1 class="entry-title">GALLERY</h1>
+
+                    </header>
+                    <!-- entry-header -->
+
+
+                    <!-- .media-grid-wrap -->
+                    <div class="media-grid-wrap">
+
+
+                        <!-- GALLERY -->
+                        <div class="r-gallery masonry media-grid" data-layout="masonry" data-item-width="420">
+
+
+
+                            <!-- gallery-item -->
+                            {%  for gallery in gallery %}
+                            <div class="media-cell hentry">
+
+                                <div class="media-box">
+                                    <img src="{{gallery.image.url}}" style="width: 350px; height: 350px;" alt="gallery-post">
+                                    <div class="mask">
+                                        <div class="media-cell-desc">
+                                            <h3>{{gallery.title}}</h3>
+                                            <h4>{{gallery.created_date}}</h4>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'gallery-single-page' gallery.pk %}"></a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <!-- gallery-item -->
+
+
+
+                            <!-- GALLERY -->
+
+
+                        </div>
+                        <!-- .media-grid-wrap -->
+
+
+
+                        <!-- InstanceEndEditable -->
+
+
+
+                    </div>
+                    <!-- layout-medium -->
+
+
+
+
+
+
+                </div>
+                <!-- site-content -->
+
+            </div>
+            <!-- primary -->
+
+
+
+
+        </div>
+        <!-- site-main -->
+
+
+        {% endblock content %}
